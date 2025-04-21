@@ -1,0 +1,980 @@
+,id,category,question,code,answer
+0,0,multi_lingual,2023 मध्ये मुंबईसाठी कोणत्या महिन्यात सर्वाधिक सरासरी PM2.5 आहे?,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data = data[data[""city""] == ""Mumbai""]
+    data[""Timestamp""] = pd.to_datetime(data[""Timestamp""])
+    data = data[data[""Timestamp""].dt.year == 2023]
+    data[""Month""] = data[""Timestamp""].dt.month
+    data = data.groupby(""Month"")[""PM2.5""].mean().idxmax()
+    print(data)
+
+true_code()",1
+1,1,multi_lingual,2022 ജൂലൈയിൽ ഏറ്റവും ഉയർന്ന പിഎം 2.5 ലെവൽ ഏത് നഗരത്തിലാണ്?,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data[""Timestamp""] = pd.to_datetime(data[""Timestamp""])
+    data = data[(data[""Timestamp""].dt.year == 2022) & (data[""Timestamp""].dt.month == 7)]
+    data = data.groupby(""city"")[""PM2.5""].max().idxmax()
+    print(data)
+
+true_code()",Mumbai
+2,2,multi_lingual,ಯಾವ ರಾಜ್ಯವು ಅತಿ ಹೆಚ್ಚು ಸರಾಸರಿ PM2.5 ಅನ್ನು ಹೊಂದಿದೆ?,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data = data.groupby(""state"")[""PM2.5""].mean().idxmax()
+    print(data)
+
+true_code()",Delhi
+3,3,multi_lingual,Which city has the highest PM2.5 level in July 2022?,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data[""Timestamp""] = pd.to_datetime(data[""Timestamp""])
+    data = data[(data[""Timestamp""].dt.year == 2022) & (data[""Timestamp""].dt.month == 7)]
+    data = data.groupby(""city"")[""PM2.5""].max().idxmax()
+    print(data)
+
+true_code()",Mumbai
+4,4,multi_lingual,सबसूं ज्यादा औसत PM2.5 कोनसा राज्य में है ?,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data = data.groupby(""state"")[""PM2.5""].mean().idxmax()
+    print(data)
+
+true_code()",Delhi
+5,5,multi_lingual,Which state has the highest average PM2.5? ,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data = data.groupby(""state"")[""PM2.5""].mean().idxmax()
+    print(data)
+
+true_code()",Delhi
+6,6,multi_lingual,ஜூலை 2022 இல் எந்த நகரத்தில் PM2.5 அளவு அதிகமாக உள்ளது?,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data[""Timestamp""] = pd.to_datetime(data[""Timestamp""])
+    data = data[(data[""Timestamp""].dt.year == 2022) & (data[""Timestamp""].dt.month == 7)]
+    data = data.groupby(""city"")[""PM2.5""].max().idxmax()
+    print(data)
+
+true_code()",Mumbai
+7,7,multi_lingual,જુલાઈ 2022 માં કયા શહેરમાં સૌથી વધુ PM2.5 સ્તર છે?,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data[""Timestamp""] = pd.to_datetime(data[""Timestamp""])
+    data = data[(data[""Timestamp""].dt.year == 2022) & (data[""Timestamp""].dt.month == 7)]
+    data = data.groupby(""city"")[""PM2.5""].max().idxmax()
+    print(data)
+
+true_code()",Mumbai
+8,8,multi_lingual,ਮੁੰਬਈ ਲਈ 2023 ਵਿੱਚ ਕਿਹੜੇ ਮਹੀਨੇ ਵਿੱਚ ਸਭ ਤੋਂ ਵੱਧ ਔਸਤ PM2.5 ਹੈ?,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data = data[data[""city""] == ""Mumbai""]
+    data[""Timestamp""] = pd.to_datetime(data[""Timestamp""])
+    data = data[data[""Timestamp""].dt.year == 2023]
+    data[""Month""] = data[""Timestamp""].dt.month
+    data = data.groupby(""Month"")[""PM2.5""].mean().idxmax()
+    print(data)
+
+true_code()",1
+9,9,multi_lingual,२०२२ तमस्य वर्षस्य जुलैमासे कस्मिन् नगरे पीएम२.५ स्तरः सर्वाधिकः अस्ति ?,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data[""Timestamp""] = pd.to_datetime(data[""Timestamp""])
+    data = data[(data[""Timestamp""].dt.year == 2022) & (data[""Timestamp""].dt.month == 7)]
+    data = data.groupby(""city"")[""PM2.5""].max().idxmax()
+    print(data)
+
+true_code()",Mumbai
+10,10,multi_lingual,Which month has the highest average PM2.5 in 2023 for Mumbai?,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data = data[data[""city""] == ""Mumbai""]
+    data[""Timestamp""] = pd.to_datetime(data[""Timestamp""])
+    data = data[data[""Timestamp""].dt.year == 2023]
+    data[""Month""] = data[""Timestamp""].dt.month
+    data = data.groupby(""Month"")[""PM2.5""].mean().idxmax()
+    print(data)
+
+true_code()",1
+11,11,multi_lingual,মুম্বাইয়ের জন্য 2023 সালে কোন মাসে সর্বোচ্চ গড় PM2.5 ছিল?,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data = data[data[""city""] == ""Mumbai""]
+    data[""Timestamp""] = pd.to_datetime(data[""Timestamp""])
+    data = data[data[""Timestamp""].dt.year == 2023]
+    data[""Month""] = data[""Timestamp""].dt.month
+    data = data.groupby(""Month"")[""PM2.5""].mean().idxmax()
+    print(data)
+
+true_code()",1
+12,12,multi_lingual,జూలై 2022లో అత్యధిక PM2.5 స్థాయిని కలిగి ఉన్న నగరం ఏది?,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data[""Timestamp""] = pd.to_datetime(data[""Timestamp""])
+    data = data[(data[""Timestamp""].dt.year == 2022) & (data[""Timestamp""].dt.month == 7)]
+    data = data.groupby(""city"")[""PM2.5""].max().idxmax()
+    print(data)
+
+true_code()",Mumbai
+13,13,multi_lingual,2023 mein Mumbai ke lie kis maheene mein ausat pm2.5 sabase adhik hai?,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data = data[data[""city""] == ""Mumbai""]
+    data[""Timestamp""] = pd.to_datetime(data[""Timestamp""])
+    data = data[data[""Timestamp""].dt.year == 2023]
+    data[""Month""] = data[""Timestamp""].dt.month
+    data = data.groupby(""Month"")[""PM2.5""].mean().idxmax()
+    print(data)
+
+true_code()",1
+14,14,multi_lingual,2023 में मुंबई के लिए किस महीने में औसत PM2.5 सबसे अधिक है?,"def true_code():
+    import pandas as pd
+    data = pd.read_csv(""raw_data/main_data.csv"")
+    data = data[data[""city""] == ""Mumbai""]
+    data[""Timestamp""] = pd.to_datetime(data[""Timestamp""])
+    data = data[data[""Timestamp""].dt.year == 2023]
+    data[""Month""] = data[""Timestamp""].dt.month
+    data = data.groupby(""Month"")[""PM2.5""].mean().idxmax()
+    print(data)
+
+true_code()",1
+15,15,area_based,Which union territory has the lowest PM2.5 concentration per square kilometer?,"def true_code():
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    
+    state_pm25 = main_data.groupby('state')['PM2.5'].mean().reset_index()
+    states_area = states_data[['state', 'area (km2)']]
+    merged_df = state_pm25.merge(states_area, on='state', how='inner')
+    
+    merged_df['pm25_per_km2'] = merged_df['PM2.5'] / merged_df['area (km2)']
+    union_territories = ['Delhi', 'Chandigarh', 'Andaman and Nicobar Islands', 
+                         'Dadra and Nagar Haveli', 'Daman and Diu', 'Lakshadweep', 
+                         'Puducherry', 'Jammu and Kashmir', 'Ladakh']
+    ut_df = merged_df[merged_df['state'].isin(union_territories)]
+    lowest_pm25_ut = ut_df.loc[ut_df['pm25_per_km2'].idxmin(), 'state']
+    
+    print(lowest_pm25_ut)
+
+true_code()",Jammu and Kashmir
+16,16,area_based,Identify the state with the highest density of monitoring stations relative to its area.,"def true_code():
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    
+    station_counts = main_data.groupby('state')['station'].nunique().reset_index()
+    station_counts.rename(columns={'station': 'num_stations'}, inplace=True)
+
+    merged_df = station_counts.merge(states_data, on='state', how='inner')
+    merged_df['stations_per_km2'] = merged_df['num_stations'] / merged_df['area (km2)']
+    highest_density_state = merged_df.loc[merged_df['stations_per_km2'].idxmax(), 'state']
+
+    print(highest_density_state)
+
+true_code()",Delhi
+17,17,area_based,Which state has the third highest density of air quality monitoring stations across its land area?,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    station_counts = main_data.groupby('state')['station'].nunique().reset_index()
+    merged_data = station_counts.merge(states_data, on='state')
+    merged_data['density'] = merged_data['station'] / merged_data['area (km2)']
+    sorted_states = merged_data.sort_values('density', ascending=False)
+    third_highest_state = sorted_states.iloc[2]['state']
+    
+    print(third_highest_state)
+
+true_code()",Puducherry
+18,18,area_based,Report the total land area of the state with the highest combined PM2.5 and PM10 concentrations.,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    state_averages = main_data.groupby('state')[['PM2.5', 'PM10']].mean()
+    state_averages['combined'] = state_averages['PM2.5'] + state_averages['PM10']
+    max_state = state_averages['combined'].idxmax()
+    state_area = states_data.loc[states_data['state'] == max_state, 'area (km2)'].iloc[0]
+    
+    print(state_area)
+
+true_code()",1484
+19,19,area_based,Identify the state with the highest PM10 levels per population density.,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    state_avg_pm10 = main_data.groupby('state')['PM10'].mean().reset_index()
+    merged_data = pd.merge(state_avg_pm10, states_data, on='state')
+    merged_data['pm10_per_capita'] = (merged_data['PM10'] * merged_data['area (km2)']) / merged_data['population']
+    max_state = merged_data.loc[merged_data['pm10_per_capita'].idxmax()]['state']
+    
+    print(max_state)
+
+true_code()",Arunachal Pradesh
+20,20,area_based,Which state has the most uniform PM2.5 levels across its land area?,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    data = main_data.groupby(""state"")['PM2.5'].std().idxmin()
+    
+    print(data)
+
+true_code()",Mizoram
+21,21,area_based,Which state has the highest land area among the top 5 most polluted states?,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    state_pm25_avg = main_data.groupby('state')['PM2.5'].mean().reset_index()
+    state_pm25_avg = state_pm25_avg.sort_values('PM2.5', ascending=False)
+    top_5_polluted_states = state_pm25_avg.head(5)['state'].tolist()
+    top_5_states_area = states_data[states_data['state'].isin(top_5_polluted_states)]
+    max_area_state = top_5_states_area.loc[top_5_states_area['area (km2)'].idxmax()]['state']
+    print(max_area_state)
+
+true_code()",Uttar Pradesh
+22,22,area_based,Which state has the highest PM2.5 concentration per square kilometer?,"def true_code():
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    
+    state_avg_pm25 = main_data.groupby('state')['PM2.5'].mean().reset_index()
+    merged_df = state_avg_pm25.merge(states_data, on='state', how='inner')
+    merged_df['pm25_per_sqkm'] = merged_df['PM2.5'] / merged_df['area (km2)']
+    highest_pm25_state = merged_df.loc[merged_df['pm25_per_sqkm'].idxmax(), 'state']
+    
+    print(highest_pm25_state)
+
+true_code()",Chandigarh
+23,23,area_based,"Which state with a land area greater than 50,000 km² has the lowest PM10 level?","def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    state_pm10 = main_data.groupby('state')['PM10'].mean().reset_index()
+    merged_data = pd.merge(state_pm10, states_data, on='state')
+    filtered_data = merged_data[merged_data['area (km2)'] > 50000]
+
+    min_pm10_state = filtered_data.loc[filtered_data['PM10'].idxmin()]
+    print(min_pm10_state['state'])
+
+true_code()",Arunachal Pradesh
+24,24,area_based,Identify the state that ranks fourth in having the lowest density of air monitoring stations per square kilometer.,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    station_counts = main_data.groupby('state')['station'].nunique().reset_index()
+    merged_data = station_counts.merge(states_data, on='state', how='inner')
+    merged_data['density'] = merged_data['station'] / merged_data['area (km2)']
+    sorted_states = merged_data.sort_values('density', ascending=True)
+    fourth_lowest = sorted_states.iloc[3]['state']
+    print(fourth_lowest)
+
+true_code()",Mizoram
+25,25,population_based,Report the fifth most polluted states in terms of per capita average PM2.5 exposure in 2023.,"def true_code():
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    
+    data_2023 = main_data[main_data['Timestamp'].dt.year == 2023]
+    state_pm25_avg = data_2023.groupby('state')['PM2.5'].mean().reset_index()
+    merged_df = state_pm25_avg.merge(states_data, on='state',how='inner')
+    merged_df['per_capita_pm25'] = (merged_df['PM2.5'] / merged_df['population']) * 1000000
+    
+    sorted_df = merged_df.sort_values('per_capita_pm25', ascending=False)
+    fifth_most_polluted = sorted_df.iloc[4]['state']
+    
+    print(fifth_most_polluted)
+
+true_code()",Nagaland
+26,26,population_based,Which low-population state received the most NCAP funding relative to its needs?,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    state_funding = ncap_funding_data.groupby('state')['Total fund released'].sum().reset_index()
+    merged_data = pd.merge(states_data, state_funding, on='state')
+    merged_data['funding_per_capita'] = merged_data['Total fund released'] / merged_data['population']
+    median_population = states_data['population'].median()
+    low_pop_states = merged_data[merged_data['population'] < median_population]
+    max_funding_state = low_pop_states.loc[low_pop_states['funding_per_capita'].idxmax()]
+    print(max_funding_state['state'])
+
+true_code()",Chandigarh
+27,27,population_based,Which state in India has the lowest number of monitoring stations relative to its population?,"def true_code():
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    station_counts = main_data.groupby('state')['station'].nunique().reset_index()
+    station_counts.rename(columns={'station': 'num_stations'}, inplace=True)
+    merged_df = station_counts.merge(states_data, on='state', how='inner')
+    merged_df['stations_per_million'] = merged_df['num_stations'] / merged_df['population']
+    lowest_ratio_state = merged_df.loc[merged_df['stations_per_million'].idxmin(), 'state']
+    print(lowest_ratio_state)
+
+true_code()",Jammu and Kashmir
+28,28,population_based,Which state has the highest average PM2.5 concentration relative to its population density?,"def true_code():
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    
+    avg_pm25 = main_data.groupby('state')['PM2.5'].mean().reset_index()
+    merged_df = avg_pm25.merge(states_data, on='state', how='inner')
+    merged_df['Population Density'] = merged_df['population'] / merged_df['area (km2)']
+    merged_df['PM25_per_capita'] = merged_df['PM2.5'] / merged_df['Population Density']
+    highest_pm25_state = merged_df.loc[merged_df['PM25_per_capita'].idxmax(), 'state']
+    
+    print(highest_pm25_state)
+
+true_code()",Arunachal Pradesh
+29,29,population_based,"Report the state that has the largest population, among the three most polluted states.","def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    state_pm25_avg = main_data.groupby('state')['PM2.5'].mean().reset_index()
+    state_pm25_avg = state_pm25_avg.sort_values('PM2.5', ascending=False)
+    top_3_states = state_pm25_avg.head(3)['state'].tolist()
+    top_3_states_data = states_data[states_data['state'].isin(top_3_states)]
+    most_populated_state = top_3_states_data.loc[top_3_states_data['population'].idxmax()]['state']
+    print(most_populated_state)
+
+true_code()",Bihar
+30,30,population_based,What percentage of the population lives in areas that has hazardous air quality (average PM2.5>60  per state)?,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    state_avg_pm25 = main_data.groupby('state')['PM2.5'].mean().reset_index()
+    hazardous_states = state_avg_pm25[state_avg_pm25['PM2.5'] > 60]['state'].tolist()
+    total_hazardous_pop = states_data[states_data['state'].isin(hazardous_states)]['population'].sum()
+    total_population = states_data['population'].sum()
+    percentage = (total_hazardous_pop / total_population) * 100
+    
+    print(percentage)
+
+true_code()",29.21960675284611
+31,31,spatial_aggregation,Which station reported the lowest PM2.5 readings during Makar Sankranti?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[(df['Timestamp'].dt.day == 14) & (df['Timestamp'].dt.month == 1)].groupby('station')['PM2.5'].min().idxmin()
+    print(data)
+
+true_code()","Punjabi Bagh, Delhi - DPCC"
+32,32,spatial_aggregation,Which state recorded the highest average PM2.5 level?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv('raw_data/main_data.csv')
+    data = df.groupby('state')['PM2.5'].mean().idxmax()
+    print(data)
+
+true_code()",Delhi
+33,33,spatial_aggregation,Which state has the highest number of monitoring stations?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv('raw_data/main_data.csv')
+    data = df.groupby('state')['station'].nunique().idxmax()
+    print(data)
+
+true_code()",Maharashtra
+34,34,spatial_aggregation,In which station is the PM2.5 concentration the highest on average?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv('raw_data/main_data.csv')
+    data = df.groupby('station')['PM2.5'].mean().idxmax()
+    print(data)
+
+true_code()","New Moti Bagh, Delhi - MHUA"
+35,35,spatial_aggregation,Which state had the lowest average PM2.5 during the monsoon season?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[(df['Timestamp'].dt.month >= 6) & (df['Timestamp'].dt.month <= 9)].groupby('state')['PM2.5'].mean().idxmin()
+    print(data)
+
+true_code()",Mizoram
+36,36,spatial_aggregation,Which city reported the highest PM10 levels during Diwali months?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv('raw_data/main_data.csv')
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[(df['Timestamp'].dt.month == 10) | (df['Timestamp'].dt.month == 11)].groupby('city')['PM10'].max().idxmax()
+    print(data)
+
+true_code()",Amritsar
+37,37,spatial_aggregation,Which city had the most stable PM2.5 levels?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    data = df.groupby('city')['PM2.5'].var().idxmin()
+    print(data)
+
+true_code()",Tirunelveli
+38,38,spatial_aggregation,Which state had the highest average PM2.5 level on Republic Day?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv('raw_data/main_data.csv')
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[(df['Timestamp'].dt.day == 26) & (df['Timestamp'].dt.month == 1)].groupby('state')['PM2.5'].mean().idxmax()
+    print(data)
+
+true_code()",Delhi
+39,39,spatial_aggregation,Which city has the lowest average PM10 level?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv('raw_data/main_data.csv')
+    data = df.groupby('city')['PM10'].mean().idxmin()
+    print(data)
+
+true_code()",Tirunelveli
+40,40,spatial_aggregation,Which city has the highest average PM2.5 in December 2023?,"def true_code():
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data[""Timestamp""] = pd.to_datetime(main_data[""Timestamp""])
+    answer = main_data[(main_data[""Timestamp""].dt.year == 2023) & (main_data[""Timestamp""].dt.month == 12)].groupby(""city"")[""PM2.5""].mean().idxmax()
+    print(answer)
+
+true_code()",Begusarai
+41,41,spatial_aggregation,In which city is the median PM2.5 level the lowest?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    data = df.groupby('city')['PM2.5'].median().idxmin()
+    print(data)
+
+true_code()",Aizawl
+42,42,temporal_aggregation,"In which month (e.g. January, February, ... etc) does the PM2.5 level drop the most post-winter?","def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[(df['Timestamp'].dt.month >= 3) & (df['Timestamp'].dt.month <= 5)].groupby(df['Timestamp'].dt.month_name())['PM2.5'].mean().idxmin()
+    print(data)
+
+true_code()",May
+43,43,temporal_aggregation,"Which weekday (i.e. Monday, Tuesday, Wednesday... etc) sees the highest PM2.5 pollution levels on average?","def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[df['Timestamp'].dt.weekday < 5].groupby(df['Timestamp'].dt.day_name())['PM2.5'].mean().idxmax()
+    print(data)
+
+true_code()",Thursday
+44,44,temporal_aggregation,What was the peak PM2.5 was recorded in 2017?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[df['Timestamp'].dt.year == 2017]['PM2.5'].max()
+    print(data)
+
+true_code()",1000.0
+45,45,temporal_aggregation,"Which day of the week (i.e. Monday, Tuesday, Wednesday... etc) has the lowest average PM2.5 concentration ?","def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df.groupby(df['Timestamp'].dt.day_name())['PM2.5'].mean().idxmin()
+    print(data)
+
+true_code()",Saturday
+46,46,temporal_aggregation,In which year was the highest average PM2.5 recorded?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df.groupby(df['Timestamp'].dt.year)['PM2.5'].mean().idxmax()
+    print(data)
+
+true_code()",2017
+47,47,temporal_aggregation,What is the minimum PM2.5 value recorded ever?,"def true_code():
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    print(main_data[""PM2.5""].min())
+
+true_code()",0.02
+48,48,temporal_aggregation,During which year January has the highest average PM2.5 level?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[df['Timestamp'].dt.month == 1].groupby(df['Timestamp'].dt.year)['PM2.5'].mean().idxmax()
+    print(data)
+
+true_code()",2018
+49,49,temporal_aggregation,During which month is the average PM10 level the highest across India?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df.groupby(df['Timestamp'].dt.month)['PM10'].mean().idxmax()
+    print(data)
+
+true_code()",11
+50,50,temporal_aggregation,What is the maximum PM2.5 value recorded ever?,"def true_code():
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    print(main_data[""PM2.5""].max())
+
+true_code()",1000.0
+51,51,temporal_aggregation,Which week of the year has the lowest average PM2.5 level?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df.groupby(df['Timestamp'].dt.isocalendar().week)['PM2.5'].mean().idxmin()
+    print(data)
+
+true_code()",30
+52,52,temporal_aggregation,"Which season (Winter, Summer, Monsoon, Post-Monsoon) has the lowest PM10 levels ?","def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    df['season'] = df['Timestamp'].dt.month.apply(lambda x: 'Winter' if x in [12, 1, 2] else 'Summer' if x in [3, 4, 5] else 'Monsoon' if x in [6, 7, 8, 9] else 'Post Monsoon')
+    data = df.groupby('season')['PM10'].mean().idxmin()
+    print(data)
+
+true_code()",Monsoon
+53,53,spatio_temporal_aggregation,In which station was PM2.5 the lowest on World Environment Day in year 2020?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[(df['Timestamp'].dt.month == 6) & (df['Timestamp'].dt.day == 5) & (df['Timestamp'].dt.year == 2020)].groupby('station')['PM2.5'].min().idxmin()
+    print(data)
+
+true_code()","Sikulpuikawn, Aizawl - Mizoram PCB"
+54,54,spatio_temporal_aggregation,Which station recorded the highest PM10 levels on New Year’s Eve ever?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[(df['Timestamp'].dt.month == 12) & (df['Timestamp'].dt.day == 31)].groupby('station')['PM10'].max().idxmax()
+    print(data)
+
+true_code()","Mahakaleshwar Temple, Ujjain - MPPCB"
+55,55,spatio_temporal_aggregation,In which state was average PM10 the highest during the Rabi season?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[(df['Timestamp'].dt.month >= 10) | (df['Timestamp'].dt.month <= 3)].groupby('state')['PM10'].mean().idxmax()
+    print(data)
+
+true_code()",Delhi
+56,56,spatio_temporal_aggregation,Which city experienced the largest Average PM2.5 drop compared between October and December in year 2019?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    df['Month'] = df['Timestamp'].dt.month
+    data = df[((df['Month'] == 10) | (df['Month'] == 12)) & (df['Timestamp'].dt.year == 2019)].groupby(['city', 'Month'])['PM2.5'].mean().unstack()
+    data['diff'] = data[10] - data[12]
+    data = data['diff'].idxmax()
+    print(data)
+
+true_code()",Sirsa
+57,57,spatio_temporal_aggregation,In which city was PM2.5 the lowest during the COVID-19 lockdown (April 2020)?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[(df['Timestamp'].dt.month == 4) & (df['Timestamp'].dt.year == 2020)].groupby('city')['PM2.5'].min().idxmin()
+    print(data)
+
+true_code()",Howrah
+58,58,spatio_temporal_aggregation,Which city had the highest PM2.5 levels on Independence Day 2023?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[df['Timestamp'] == pd.to_datetime(""2023-08-15"")].groupby('city')['PM2.5'].max().idxmax()
+    print(data)
+
+true_code()",Chhapra
+59,59,spatio_temporal_aggregation,Which state had the recorded highest PM2.5 level during Diwali 2023?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[(df['Timestamp'].dt.day >= 12) & (df['Timestamp'].dt.day <= 15) & (df['Timestamp'].dt.month == 10) & (df['Timestamp'].dt.year == 2023)].groupby('state')['PM2.5'].max().idxmax()
+    print(data)
+
+true_code()",Uttar Pradesh
+60,60,spatio_temporal_aggregation,In which state did average PM2.5 increase the most in winter 2022 compared to summer?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[(df['Timestamp'].dt.month >= 3) & (df['Timestamp'].dt.year == 2022)]
+    data = data[~((data['Timestamp'].dt.month >= 6) & (data['Timestamp'].dt.month <= 11))]
+    data['season'] = data['Timestamp'].dt.month.apply(lambda x: 'Winter' if x in [12, 1, 2] else 'Summer')
+    data = data.groupby(['state', 'season'])['PM2.5'].mean().reset_index()
+    data = data.pivot(index='state', columns='season', values='PM2.5')
+    data['diff'] = data['Winter'] - data['Summer']
+    data = data['diff'].idxmax()
+    print(data)
+
+true_code()",Bihar
+61,61,spatio_temporal_aggregation,What is the Average PM2.5 on sunday in Maharashtra?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[(df['Timestamp'].dt.day_name() == 'Sunday') & (df['state'] == 'Maharashtra')]['PM2.5'].mean()
+    print(data)
+
+true_code()",42.76463487995995
+62,62,spatio_temporal_aggregation,Which station had the average PM2.5 level increased comapred to August 2020 from August 2019?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    df['Year'] = df['Timestamp'].dt.year
+    data = df[(df['Timestamp'].dt.month == 8)]
+    data = data[(data['Timestamp'].dt.year == 2019) | (data['Timestamp'].dt.year == 2020)]
+    data = data.groupby(['station', 'Year'])['PM2.5'].mean().reset_index()
+    data = data.pivot(index='station', columns='Year', values='PM2.5')
+    data['diff'] = data[2020] - data[2019]
+    data = data[data['diff'] > 0]
+    data = data['diff'].idxmax()
+    print(data)
+
+true_code()","Phase-4 GIDC, Vatva - GPCB"
+63,63,funding_based,Which financial year had the highest average funding release across cities?,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    avg_2019_20 = ncap_funding_data['Amount released during FY 2019-20'].mean()
+    avg_2020_21 = ncap_funding_data['Amount released during FY 2020-21'].mean()
+    avg_2021_22 = ncap_funding_data['Amount released during FY 2021-22'].mean()
+    
+    max_avg = max(avg_2019_20, avg_2020_21, avg_2021_22)
+    
+    if max_avg == avg_2019_20:
+        print(""2019-20"")
+    elif max_avg == avg_2020_21:
+        print(""2020-21"")
+    else:
+        print(""2021-22"")
+
+true_code()",2019-20
+64,64,funding_based,Report the state(excluding Union Territories) that received the maximum NCAP funding relative to its land area on a per-square-kilometer basis.,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    funding_per_state = ncap_funding_data.groupby('state')['Total fund released'].sum().reset_index()
+    merged = pd.merge(funding_per_state, states_data, on='state')
+    
+    uts = ['Andaman and Nicobar Islands', 'Chandigarh', 'Dadra and Nagar Haveli',
+            'Daman and Diu', 'Delhi', 'Jammu and Kashmir', 'Ladakh', 
+            'Lakshadweep', 'Puducherry']
+    merged = merged[~merged['state'].isin(uts)]
+    merged['funding_per_sqkm'] = merged['Total fund released'] / merged['area (km2)']
+    max_funding_state = merged.loc[merged['funding_per_sqkm'].idxmax()]['state']
+    
+    print(max_funding_state)
+
+true_code()",Punjab
+65,65,funding_based,"Which city has the highest difference between allocated NCAP funding and actual utilisation, indicating potential underutilisation?","def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    ncap_funding_data['Difference'] = ncap_funding_data['Total fund released'] - ncap_funding_data['Utilisation as on June 2022']
+    max_difference_city = ncap_funding_data.sort_values('Difference', ascending=False)['city'].iloc[0]
+    print(max_difference_city)
+
+true_code()",Srinagar
+66,66,funding_based,Which state saw the highest increase in funding between FY 2019-20 and FY 2021-22?,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    funding_increase = ncap_funding_data.groupby('state').agg({
+        'Amount released during FY 2019-20': 'sum',
+        'Amount released during FY 2021-22': 'sum'
+    }).reset_index()
+    funding_increase['increase'] = funding_increase['Amount released during FY 2021-22'] - funding_increase['Amount released during FY 2019-20']
+    max_increase_state = funding_increase.loc[funding_increase['increase'].idxmax()]['state']
+    print(max_increase_state)
+
+true_code()",Jammu & Kashmir
+67,67,funding_based,Which state has the lowest NCAP funding per capita?,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    state_funding = ncap_funding_data.groupby('state')['Total fund released'].sum().reset_index()
+    merged_data = pd.merge(state_funding, states_data, on='state')
+    merged_data['per_capita'] = merged_data['Total fund released'] / merged_data['population']
+    min_funding_state = merged_data.loc[merged_data['per_capita'].idxmin()]['state']
+    print(min_funding_state)
+
+true_code()",Tamil Nadu
+68,68,funding_based,Which city utilised the highest percentage of its allocated NCAP funding as of June 2022?,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    ncap_funding_data['utilisation_percent'] = (ncap_funding_data['Utilisation as on June 2022'] / 
+                                               ncap_funding_data['Total fund released']) * 100
+    max_utilization_city = ncap_funding_data.loc[ncap_funding_data['utilisation_percent'].idxmax()]['city']
+    print(max_utilization_city)
+
+true_code()",Visakhapatnam
+69,69,funding_based,Identify the state that has the highest number of cities receiving NCAP funding.,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    state_city_counts = ncap_funding_data.groupby('state')['city'].nunique().reset_index()
+    state_city_counts = state_city_counts.sort_values(by='city', ascending=False)
+    max_cities_state = state_city_counts.iloc[0]['state']
+    print(max_cities_state)
+
+true_code()",Maharashtra
+70,70,funding_based,Which state with NCAP funding has the lowest PM2.5 levels?,"def true_code():
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    
+    state_pm25_avg = main_data.groupby('state')['PM2.5'].mean().reset_index()
+    funded_states = ncap_funding_data[ncap_funding_data['Total fund released'] > 0]['state'].unique()
+    funded_pm25_states = state_pm25_avg[state_pm25_avg['state'].isin(funded_states)]
+    lowest_funded_pm25_state = funded_pm25_states.loc[funded_pm25_states['PM2.5'].idxmin(), 'state']
+    print(lowest_funded_pm25_state)
+
+true_code()",Meghalaya
+71,71,funding_based,Which city has the lowest NCAP funding with respect to average PM2.5 concentration in 2021 (FY 2020-21)?,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    data_2021 = main_data[main_data['Timestamp'].dt.year == 2021]
+    city_pm25_2021 = data_2021.groupby('city')['PM2.5'].mean().reset_index()
+    funding_2021 = ncap_funding_data[['city', 'Amount released during FY 2020-21']]
+    merged_df = city_pm25_2021.merge(funding_2021, on='city', how='inner')
+    merged_df['funding_per_pm25'] = merged_df['Amount released during FY 2020-21'] / merged_df['PM2.5']
+    lowest_funding_city = merged_df.loc[merged_df['funding_per_pm25'].idxmin(), 'city']
+    print(lowest_funding_city)
+
+true_code()",Ujjain
+72,72,funding_based,Report the city that received the maximum NCAP funding.,"def true_code():
+    import numpy as np
+    import pandas as pd
+    main_data = pd.read_csv(""raw_data/main_data.csv"")
+    main_data['Timestamp'] = pd.to_datetime(main_data['Timestamp'])
+    states_data = pd.read_csv(""raw_data/State_data.csv"")
+    ncap_funding_data = pd.read_csv(""raw_data/NCAP_Funding.csv"")
+    ncap_funding_data.replace('-', np.nan, inplace=True)
+    ncap_funding_data['Amount released during FY 2019-20'] = ncap_funding_data['Amount released during FY 2019-20'].astype('float64')
+    ncap_funding_data['Amount released during FY 2020-21'] = ncap_funding_data['Amount released during FY 2020-21'].astype('float64')
+    ncap_funding_data['Amount released during FY 2021-22'] = ncap_funding_data['Amount released during FY 2021-22'].astype('float64')
+    ncap_funding_data['Utilisation as on June 2022'] = ncap_funding_data['Utilisation as on June 2022'].astype('float64')
+    
+    city_funding = ncap_funding_data.groupby('city')['Total fund released'].sum().reset_index()
+    max_funding_city = city_funding.loc[city_funding['Total fund released'].idxmax()]['city']
+    print(max_funding_city)
+
+true_code()",Chandigarh
+73,73,specific_patterns,Which day in the last five years recorded the highest PM2.5 in Mumbai?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df = df[df[""city""] == ""Mumbai""]
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    df['Year'] = df['Timestamp'].dt.year
+    df = df[df[""Year""] >= 2019]
+    data = df.groupby('Timestamp')['PM2.5'].max().idxmax().date()
+    print(data)
+
+true_code()",2022-07-01
+74,74,specific_patterns,Which Indian city recorded the highest PM2.5 levels for single-day in the past decade?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df[df[""PM2.5""] == df[""PM2.5""].max()]
+    data = data.groupby(""city"")[""PM2.5""].count()
+    data = data[data == 1].idxmin()
+    print(data)
+
+true_code()",Brajrajnagar
+75,75,specific_patterns,"Which month (e.g. January, February,... etc) from 2017-2023 has consistently recorded India's worst air quality index (AQI)?","def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    df['Month'] = df['Timestamp'].dt.month_name()
+    data = df.groupby(""Month"")['PM2.5'].mean().idxmax()
+    print(data)
+
+true_code()",November
+76,76,specific_patterns,Find a week with Delhi's highest air pollution levels for all these years,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    data = df.groupby(df['Timestamp'].dt.isocalendar().week)['PM2.5'].mean().idxmax()
+    print(data)
+
+true_code()",53
+77,77,specific_patterns,"Which specific month (e.g. January, February,... etc) has historically recorded the highest average PM2.5 levels in India?","def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    df['Month'] = df['Timestamp'].dt.month_name()
+    data = df.groupby(""Month"")[""PM2.5""].mean().idxmax()
+    print(data)
+
+true_code()",November
+78,78,specific_patterns,Which Indian city had recorded the lowest PM2.5 during the monsoon season of 2023?,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    df['Year'] = df['Timestamp'].dt.year
+    df = df[df[""Year""] == 2023]
+    df['Month'] = df['Timestamp'].dt.month
+    df = df[(df[""Month""] >= 6) & (df[""Month""] <= 9)]
+    data = df.groupby(""city"")['PM2.5'].min().idxmin()
+    print(data)
+
+true_code()",Bengaluru
+79,79,specific_patterns,Identify a year in which Delhi experienced the cleanest air from 2017-2023,"def true_code():
+    import pandas as pd
+    df = pd.read_csv(""raw_data/main_data.csv"")
+    df = df[df[""state""] == ""Delhi""]
+    df['Timestamp'] = pd.to_datetime(df['Timestamp'])
+    df['Year'] = df['Timestamp'].dt.year
+    data = df.groupby(""Year"")['PM2.5'].mean().idxmin()
+    print(data)
+
+true_code()",2020
